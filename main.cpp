@@ -8,14 +8,22 @@ void printContainer(Iterator begin_, Iterator const end_);
 ///////////////////main/////////////////////////////
 
 int main(int argc, char* argv[]) {
-    testing::InitGoogleTest(&argc, argv);
 
-    std::vector<float> v ={6, 1, 7, 2, 5};
+    std::cout << "Bubblesort:" << std::endl;
+    std::vector<int> v ={6, 1, 7, 2, 5};
+    //std::array<int, 5> v = {6, 1, 7, 2, 5};
     printContainer(v.begin(), v.end());
-    Sorting::bubblesort(v, v.begin(), v.end());
+    Sorting::bubblesort(v.begin(), v.end());
     printContainer(v.begin(), v.end());
 
-    return RUN_ALL_TESTS();
+    std::cout << std::endl << "Quicksort:" << std::endl;
+    std::vector<int> v2 ={6, 1, 5, 2, 5};
+    printContainer(v2.begin(), v2.end());
+    Sorting::quicksort(v2.begin(), v2.end());
+    printContainer(v2.begin(), v2.end());
+
+
+    return 0;
 }
 
 ////////////////Implementation//////////////////////
